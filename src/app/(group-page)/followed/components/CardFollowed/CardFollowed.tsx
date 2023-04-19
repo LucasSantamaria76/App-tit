@@ -1,3 +1,5 @@
+'use client';
+
 import { PointsMenu } from '@/app/(group-page)/components';
 import { AvatarIcon, EyeSlashIcon, StarIcon, TrashIcon, NotificationIcon, RemoveUserIcon } from '@/icons';
 
