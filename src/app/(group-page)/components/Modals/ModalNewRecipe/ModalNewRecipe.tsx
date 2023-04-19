@@ -81,7 +81,6 @@ const ModalNewRecipe = () => {
         .then(({ data }) => imagesRef.current.push(data.secure_url));
     });
     return await axios.all(uploaders);
-    //setRecipe((prev) => ({ ...prev, images: [...prev.images, data.secure_url] }))
   };
 
   const handleChange = (data: any) =>
@@ -91,7 +90,6 @@ const ModalNewRecipe = () => {
     const { preparation, ...restRecipe } = recipe;
     try {
       await uploadingImagesToCloudinary();
-      console.log(imagesRef.current);
 
       const res = await axiosApi.post(
         `/posts`,
@@ -100,7 +98,6 @@ const ModalNewRecipe = () => {
           headers: { authorization: `Bearer ${token}` },
         }
       );
-      console.log({ res });
 
       toast.success('Receta creada');
       closeModal();
