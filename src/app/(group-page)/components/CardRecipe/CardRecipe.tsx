@@ -110,11 +110,11 @@ const CardRecipe = ({ recipe }: Props) => {
         }
       },
     },
-    /* {
+    {
       label: 'Ocultar',
       icon: <EyeSlashIcon />,
       action: () => {},
-    }, */
+    },
   ];
 
   return (

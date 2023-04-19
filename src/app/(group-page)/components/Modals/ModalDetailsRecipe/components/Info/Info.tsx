@@ -12,7 +12,7 @@ const Info = () => {
       </div>
       <div className='flex flex-col items-center text-sm text-gray-400'>
         <div className='flex gap-2 text-lg text-black'>
-          <GeometryIcon />
+          <GeometryIcon color='black' />
           Pastas
         </div>
         Categorias
