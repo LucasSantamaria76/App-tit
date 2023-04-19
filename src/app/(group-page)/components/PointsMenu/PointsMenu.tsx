@@ -6,7 +6,7 @@ import { useState } from 'react';
 type TOption = {
   label: string;
   icon: React.ReactNode;
-  action: () => void;
+  action: any;
 };
 
 interface Props {
