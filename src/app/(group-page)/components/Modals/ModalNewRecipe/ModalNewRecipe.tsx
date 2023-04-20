@@ -6,7 +6,6 @@ import { hideModal } from '@/redux/slices/sliceModals';
 import { Button, Modal } from 'react-daisyui';
 import { useAppDispatch } from '@/redux/hooks';
 import { useRef, useState } from 'react';
-import { useRef, useState } from 'react';
 import axios from 'axios';
 import axiosApi from '@/app/libs/axios';
 import { Toaster, toast } from 'sonner';
@@ -29,7 +28,6 @@ export interface IOption {
 
 export interface IRecipe {
   _id: string;
-  _id: string;
   author: string;
   title: string;
   description: string;
@@ -44,7 +42,6 @@ export interface IRecipe {
 }
 
 const initialRecipe: IRecipe = {
-  _id: '',
   _id: '',
   author: '',
   title: '',
@@ -66,8 +63,6 @@ const ModalNewRecipe = () => {
   const { user } = useAppSelector((state) => state.userReducer);
   const token = useAppSelector((state) => state.userReducer.token);
   const imagesRef = useRef<string[]>([]);
-  const imagesRef = useRef<string[]>([]);
-
   const dispatch = useAppDispatch();
 
   const closeModal = () => dispatch(hideModal('modalNewRecipe'));
@@ -83,7 +78,6 @@ const ModalNewRecipe = () => {
         .post('https://api.cloudinary.com/v1_1/dviha8xhw/image/upload', formData, {
           headers: { 'X-Requested-With': 'XMLHttpRequest' },
         })
-        .then(({ data }) => imagesRef.current.push(data.secure_url));
         .then(({ data }) => imagesRef.current.push(data.secure_url));
     });
     return await axios.all(uploaders);
@@ -101,7 +95,6 @@ const ModalNewRecipe = () => {
 
       const res = await axiosApi.post(
         `/posts`,
-        { id: user._id, preparation: preparation.split('\n'), ...restRecipe, images: [...imagesRef.current] },
         { id: user._id, preparation: preparation.split('\n'), ...restRecipe, images: [...imagesRef.current] },
         {
           headers: { authorization: `Bearer ${token}` },

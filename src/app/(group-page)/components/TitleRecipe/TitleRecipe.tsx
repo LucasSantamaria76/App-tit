@@ -1,6 +1,8 @@
+'use client';
+
 import Image from 'next/image';
-import { AR } from './AR';
 import axios from 'axios';
+import { useEffect, useState } from 'react';
 
 const getCountry = async (country: string) =>
   (await axios.get(`https://restcountries.com/v3.1/alpha/${country}`)).data[0].translations.spa.common;
@@ -12,8 +14,11 @@ interface Props {
   country: string;
 }
 
-const TitleRecipe = async ({ title, country }: Props) => {
-  const countryName = await getCountry(country);
+const TitleRecipe = ({ title, country }: Props) => {
+  const [countryName, setCountryName] = useState<string>('');
+  useEffect(() => {
+    getCountry(country).then((name) => setCountryName(name));
+  }, [country]);
 
   return (
     <div className='w-max h-16 bg-slate-300 opacity-60 ml-5 mb-8 p-2'>

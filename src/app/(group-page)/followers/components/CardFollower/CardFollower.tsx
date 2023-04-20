@@ -1,9 +1,24 @@
 'use client';
 
+import { PointsMenu } from '@/app/(group-page)/components';
 import { useEffect, useState } from 'react';
 import axiosApi from '@/app/libs/axios';
 import { IProfile } from '@/redux/slices/sliceUser';
+import { EyeSlashIcon, TrashIcon } from '@/icons';
 import Image from 'next/image';
+
+const optionsMenu = [
+  {
+    label: 'Eliminar',
+    icon: <TrashIcon />,
+    action: () => {},
+  },
+  {
+    label: 'Ocultar',
+    icon: <EyeSlashIcon />,
+    action: () => {},
+  },
+];
 
 interface Props {
   id: string;
@@ -22,6 +37,9 @@ const CardFollower = ({ id }: Props) => {
   return (
     <>
       <div className='flex flex-col gap-1 md:gap-3 w-[154px] h-[104px] md:w-[183px] md:h-[225px] bg-white shadow-md rounded-xl'>
+        <div className='flex justify-end pr-5'>
+          <PointsMenu options={optionsMenu} />
+        </div>
         <div className='flex justify-center'>
           <Image
             width='35'
