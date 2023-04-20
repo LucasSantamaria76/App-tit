@@ -42,11 +42,11 @@ const CardFollower = ({ id }: Props) => {
         </div>
         <div className='flex justify-center'>
           <Image
-            width='35'
-            height='35'
+            width='36'
+            height='36'
             src={profile?.img_avatar || ''}
             alt='author'
-            className='rounded-full border border-[#FF8C00]'
+            className='rounded-full w-9 h-9 border border-[#FF8C00]'
           />
         </div>
         <div className='flex justify-center'>

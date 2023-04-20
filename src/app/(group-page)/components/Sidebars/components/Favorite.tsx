@@ -47,7 +47,7 @@ const Favorite = () => {
               height='25'
               src={avatar || ''}
               alt='author'
-              className='rounded-full border border-[#FF8C00]'
+              className='rounded-full w-[25px] h-[25px] border border-[#FF8C00]'
             />
             <h3 className='text-sm font-medium hover:ml-1 hover:scale-110 hover:text-[#ff823f]'>{name}</h3>
           </div>
