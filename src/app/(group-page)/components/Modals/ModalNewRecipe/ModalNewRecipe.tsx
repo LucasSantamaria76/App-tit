@@ -20,6 +20,7 @@ import {
   DropZone,
   Description,
 } from '.';
+import { addPost } from '@/redux/slices/sliceUser';
 
 export interface IOption {
   label: string;
@@ -91,17 +92,16 @@ const ModalNewRecipe = () => {
     const { preparation, ...restRecipe } = recipe;
     try {
       await uploadingImagesToCloudinary();
-      console.log(imagesRef.current);
-
-      const res = await axiosApi.post(
+      const { data } = await axiosApi.post(
         `/posts`,
         { id: user._id, preparation: preparation.split('\n'), ...restRecipe, images: [...imagesRef.current] },
         {
           headers: { authorization: `Bearer ${token}` },
         }
       );
-      console.log({ res });
-
+      if (data) {
+        dispatch(addPost(data._id));
+      }
       toast.success('Receta creada');
       closeModal();
     } catch (error) {
