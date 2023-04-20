@@ -37,8 +37,8 @@ export interface IRecipe {
   ingredients: string[];
   portions: string;
   country: string;
-  images?: string[];
-  likes?: string[];
+  images: string[];
+  likes: string[];
 }
 
 const initialRecipe: IRecipe = {
@@ -52,7 +52,8 @@ const initialRecipe: IRecipe = {
   ingredients: [],
   portions: '1',
   country: '',
-  //images: [],
+  images: [],
+  likes: [],
 };
 
 const ModalNewRecipe = () => {

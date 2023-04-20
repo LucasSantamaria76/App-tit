@@ -15,12 +15,8 @@ const CardProfile = ({ children }: Props) => {
         <div className='flex justify-end w-[20%] ml-3 mr-2 -translate-y-10'>
           <AvatarIcon width={80} height={80} image={user?.img_avatar || ''} />
         </div>
-        <div className='flex justify-start items-start flex-wrap w-[80%] mt-1'>
-          {children}
-          <p className='text-xs h-20 mr-2 overflow-y-auto'>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-          </p>
-        </div>
+        <div className='flex justify-between items-start w-[80%] mt-1'>{children}</div>
+        {/* <h4 className='text-xs mr-2 overflow-y-auto'>{user?.bio ? user.bio : 'No posee biografia'}</h4> */}
       </div>
     </div>
   );
