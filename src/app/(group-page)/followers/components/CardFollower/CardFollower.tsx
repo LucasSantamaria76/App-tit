@@ -1,5 +1,3 @@
-'use client';
-
 import { PointsMenu } from '@/app/(group-page)/components';
 import { useEffect, useState } from 'react';
 import axiosApi from '@/app/libs/axios';
